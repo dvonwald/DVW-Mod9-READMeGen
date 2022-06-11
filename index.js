@@ -6,17 +6,56 @@ const markdownGen = require('./utils/generateMarkdown') // linking a modularized
 // TODO: Create an array of questions for user input
 //questions for description, install instructions, usage information, contribution guidelines, test instructions, license checkbox, github username, email address, 
 const questions = [
-    "What is the title of your project?",
-    "Describe the project and the motivations for it",
-    "What did you learn from this project?",
-    "What are the steps required to install this project?",
-    "What instructions are there on how to use your application? Please include a screenshot.",
-    "Who worked on this project?",
-    "What are the contribution guidelines for this project?",
-    "What are the testing instructions for this project?",
-    "What licenses did you use for this project?",
-    "What is your github username?",
-    "What is your email address?",
+    {
+        type: 'input',
+        name: 'title',
+        message: "What is the title of your project?",
+    },
+    {
+        type: 'input',
+        name: 'description',
+        message: "How do you describe your project and what were the motivations for it?",
+    },
+    {
+        type: 'input',
+        name: 'descriptionLearn',
+        message: "What did you learn from doing this project?",
+    },
+    {
+        type: 'input',
+        name: 'install',
+        message: "What are the steps required to install this application?",
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'What are the instructions on how to use your application? Please include a screenshot.',
+    },
+    {
+        type: 'input',
+        name: 'contributors',
+        message: 'Who worked on this project?',
+    },
+    {
+        type: 'input',
+        name: 'guidelines',
+        message: 'What are the contribution guidelines for this project?'
+    },
+    {
+        type: 'input',
+        name: 'testing',
+        message: 'What are the testing instructions for this project?'
+    },
+    {
+        type: 'input',
+        name: 'githubUsername',
+        message: 'Please enter your Github username.',
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: "Please enter your email address."
+    }
 ];
 
 // Turn above questions into objects with the correct input type as per Inquirer documentation
