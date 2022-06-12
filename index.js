@@ -38,6 +38,12 @@ inquirer.prompt([
         message: 'Who worked on this project?',
     },
     {
+        type: 'checkbox',
+        name: 'license',
+        message: 'Select a license. Use arrow keys and space bar to select.',
+        choices: ['MIT', 'ISC', 'GNU GPLv3', 'Apache License 2.0']
+    },
+    {
         type: 'input',
         name: 'guidelines',
         message: 'What are the contribution guidelines for this project?'
@@ -64,8 +70,6 @@ inquirer.prompt([
         err ? console.error(err) : console.log("Responses have been saved!")
     })
 });
-
-// licenses need to include badges - Not sure how to do this
 
 // TODO: Create a function to write README file
 //this is where I'll use FS and template literals + the markdown to actually write it to a READMe.md file

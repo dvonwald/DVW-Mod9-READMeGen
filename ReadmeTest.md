@@ -1,6 +1,7 @@
-# test
+# ReadME GENERATOR TEST
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ## Description
-test test
+to make Readme files quickly iquirer
 
 ---
 
@@ -22,7 +23,7 @@ test test
 
 ## Installation
 
-test
+git clone 
 
 ## Usage
 
@@ -30,15 +31,18 @@ test
 
 ## License
 
+MIT is the license being used for this application.
+For more information, visit: https://opensource.org/licenses/MIT
+
 ## Contributions
 
 test
 
 ## Testing
 
-test
+N/A
 
 ## Questions and Contact
 
-- GitHub Profile: https://github.com/test
-- Email Address: test
+- GitHub Profile: https://github.com/dvonwald
+- Email Address: dylan.vonwald@gmail.com
