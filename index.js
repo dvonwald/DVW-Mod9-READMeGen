@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer'); // requiring inquirer module to be installed & making it a var
 const fs = require('fs'); // requiring fs module built in to JS to be used & assigning var
-const markdownGen = require('./utils/generateMarkdown') // linking a modularized local JS file
+// const markdownGen = require('./utils/generateMarkdown') // linking a modularized local JS file
 
 // TODO: Create an array of questions for user input
 //questions for description, install instructions, usage information, contribution guidelines, test instructions, license checkbox, github username, email address, 
@@ -16,12 +16,12 @@ inquirer
     {
         type: 'input',
         name: 'description',
-        message: "How do you describe your project and what were the motivations for it?",
+        message: "Write in complete sentences a short description for your project and your reason for creating it.",
     },
     {
         type: 'input',
         name: 'descriptionLearn',
-        message: "What did you learn from doing this project?",
+        message: "What did you learn from doing this project? Please use complete sentences.",
     },
     {
         type: 'input',
@@ -57,8 +57,11 @@ inquirer
         type: 'input',
         name: 'email',
         message: "Please enter your email address."
-    }
-]);
+    },
+])
+    .then((input) => {
+    console.log(input)
+    });
 
 // Need to capture answers to all of the above questions
 // Table of contents also needs to be generated and link to the appropriate sections of the READMe

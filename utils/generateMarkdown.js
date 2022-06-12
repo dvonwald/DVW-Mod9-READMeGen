@@ -23,11 +23,11 @@ module.exports = generateMarkdown;
 
 
 `
-# ${title}
+# ${input.title}
 
 ## Description
 
-${description} ${descriptionLearn}
+${input.description} ${input.descriptionLearn}
 
 ---
 
@@ -49,24 +49,24 @@ ${description} ${descriptionLearn}
 
 ## Installation
 
-${install}
+${input.install}
 
 ## Usage
 
-${usage}
+${input.usage}
 
 ## License
 
 ## Contributions
 
-${contributors}
+${input.contributors}
 
 ## Testing
 
-${testing}
+${input.testing}
 
 ## Questions and Contact
 
-GitHub Profile: https://github.com/${githubUser}
-Email Address: ${email}
+GitHub Profile: https://github.com/${input.githubUser}
+Email Address: ${input.email}
 `
