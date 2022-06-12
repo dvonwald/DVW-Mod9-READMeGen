@@ -53,7 +53,7 @@ ${input.description} ${input.descriptionLearn}
 
 - ### [License](#license)
 
-- ### [Contributions](#contributions)
+- ### [Contributors](#contributions)
 
 - ### [Testing](#testing)
 
