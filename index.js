@@ -1,11 +1,9 @@
 // Declaring variables for packages needed for this application
 const inquirer = require('inquirer'); // requiring inquirer module to be installed & making it a var
 const fs = require('fs'); // requiring fs module built in to JS to be used & assigning var
-const generateMarkdown = require('./utils/generateMarkdown');
-// const markdownGen = require('./utils/generateMarkdown') // linking a modularized local JS file
+const generateMarkdown = require('./utils/generateMarkdown'); // linking a modularized local JS file
 
-
-//questions for description, install instructions, usage information, contribution guidelines, test instructions, license checkbox, github username, email address, 
+//Using inquirer prompts for questions for description, install instructions, usage information, contribution guidelines, test instructions, license checkbox, github username, and email address. 
 inquirer.prompt([
     {
         type: 'input',
@@ -64,73 +62,9 @@ inquirer.prompt([
         message: "Please enter your email address."
     },
 ])
-.then((input) => {
-    let readmeGen = generateMarkdown(input)
-    fs.writeFile("ReadmeTest.md", readmeGen, (err) => {
-        err ? console.error(err) : console.log("Responses have been saved!")
+.then((input) => {  // Must use a then here because you're waiting for the user input from iquirer.
+    let readmeGen = generateMarkdown(input)  // this is delcaring the variable you're going to pass into the fs.writeFile function to the function in the other js file.
+    fs.writeFile("README.md", readmeGen, (err) => {  // fs is filesystem, writefile function, passing in the filename, then the variable we just declared which is input + markdown generator, then an error catch
+        err ? console.error(err) : console.log("Responses have been saved!") // this lets us know if everything went ok or throws an error
     })
 });
-
-// TODO: Create a function to write README file
-//this is where I'll use FS and template literals + the markdown to actually write it to a READMe.md file
-// function writeToFile('README.md', data) {}
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
-
-// function generateMarkdown(input) {
-//     return `# ${input.title}
-// ## Description
-// ${input.description} ${input.descriptionLearn}
-
-// ---
-
-// ## Table of Contents
-
-// - ### [Installation](#installation)
-
-// - ### [Usage](#usage)
-
-// - ### [License](#license)
-
-// - ### [Contributions](#contributions)
-
-// - ### [Testing](#testing)
-
-// - ### [Questions and Contact](#questions-and-contact)
-
-// ---
-
-// ## Installation
-
-// ${input.install}
-
-// ## Usage
-
-// ${input.usage}
-
-// ## License
-
-// ## Contributions
-
-// ${input.contributors}
-
-// ## Testing
-
-// ${input.testing}
-
-// ## Questions and Contact
-
-// - GitHub Profile: https://github.com/${input.githubUser}
-// - Email Address: ${input.email}
-// `
-// };
-// .then((input) => {
-// // console.log(input)
-// // const markdownGen = generateMarkdown(input); 
-// fs.writeFile("READMeGen.md", input, (err) => {
-//     err ? console.log(err) : console.log("READMe.md has been created!")
-// })

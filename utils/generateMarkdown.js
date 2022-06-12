@@ -1,5 +1,4 @@
-// // TODO: Create a function that returns a license badge based on which license is passed in
-// // If there is no license, return an empty string
+// Function that generates a badge in the readme file based on input
 function renderLicenseBadge(input) {
   if (!`${input.license}`) {
     return "";
@@ -18,8 +17,7 @@ function renderLicenseBadge(input) {
   }
 };
 
-// // TODO: Create a function that returns the license link
-// // If there is no license, return an empty string
+// function that generates a link, this is inserted below in the markdown text using a template literal
 function renderLicenseLink(input) {
   if (!`${input.license}`) {
     return "";
@@ -76,7 +74,7 @@ ${input.usage}
 ${input.license} is the license being used for this application.
 For more information, visit: ${renderLicenseLink(input)}
 
-## Contributions
+## Contributors
 
 ${input.contributors}
 
