@@ -5,7 +5,9 @@ const markdownGen = require('./utils/generateMarkdown') // linking a modularized
 
 // TODO: Create an array of questions for user input
 //questions for description, install instructions, usage information, contribution guidelines, test instructions, license checkbox, github username, email address, 
-const questions = [
+
+inquirer
+    .prompt([
     {
         type: 'input',
         name: 'title',
@@ -48,7 +50,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'githubUsername',
+        name: 'githubUser',
         message: 'Please enter your Github username.',
     },
     {
@@ -56,19 +58,16 @@ const questions = [
         name: 'email',
         message: "Please enter your email address."
     }
-];
+]);
 
-// Turn above questions into objects with the correct input type as per Inquirer documentation
 // Need to capture answers to all of the above questions
 // Table of contents also needs to be generated and link to the appropriate sections of the READMe
-// github username needs to be turned into a github link
 // email address needs to be turned into a link
-// licenses need to include badges
-// 
+// licenses need to include badges - Not sure how to do this
 
 // TODO: Create a function to write README file
 //this is where I'll use FS and template literals + the markdown to actually write it to a READMe.md file
-function writeToFile(fileName, data) {}
+// function writeToFile('README.md', data) {}
 
 // TODO: Create a function to initialize app
 function init() {}
