@@ -1,13 +1,12 @@
-// TODO: Include packages needed for this application
+// Declaring variables for packages needed for this application
 const inquirer = require('inquirer'); // requiring inquirer module to be installed & making it a var
 const fs = require('fs'); // requiring fs module built in to JS to be used & assigning var
+const generateMarkdown = require('./utils/generateMarkdown');
 // const markdownGen = require('./utils/generateMarkdown') // linking a modularized local JS file
 
-// TODO: Create an array of questions for user input
-//questions for description, install instructions, usage information, contribution guidelines, test instructions, license checkbox, github username, email address, 
 
-inquirer
-    .prompt([
+//questions for description, install instructions, usage information, contribution guidelines, test instructions, license checkbox, github username, email address, 
+inquirer.prompt([
     {
         type: 'input',
         name: 'title',
@@ -59,13 +58,13 @@ inquirer
         message: "Please enter your email address."
     },
 ])
-    .then((input) => {
-    console.log(input)
-    });
+.then((input) => {
+    let readmeGen = generateMarkdown(input)
+    fs.writeFile("ReadmeTest.md", readmeGen, (err) => {
+        err ? console.error(err) : console.log("Responses have been saved!")
+    })
+});
 
-// Need to capture answers to all of the above questions
-// Table of contents also needs to be generated and link to the appropriate sections of the READMe
-// email address needs to be turned into a link
 // licenses need to include badges - Not sure how to do this
 
 // TODO: Create a function to write README file
@@ -77,3 +76,57 @@ function init() {}
 
 // Function call to initialize app
 init();
+
+// function generateMarkdown(input) {
+//     return `# ${input.title}
+// ## Description
+// ${input.description} ${input.descriptionLearn}
+
+// ---
+
+// ## Table of Contents
+
+// - ### [Installation](#installation)
+
+// - ### [Usage](#usage)
+
+// - ### [License](#license)
+
+// - ### [Contributions](#contributions)
+
+// - ### [Testing](#testing)
+
+// - ### [Questions and Contact](#questions-and-contact)
+
+// ---
+
+// ## Installation
+
+// ${input.install}
+
+// ## Usage
+
+// ${input.usage}
+
+// ## License
+
+// ## Contributions
+
+// ${input.contributors}
+
+// ## Testing
+
+// ${input.testing}
+
+// ## Questions and Contact
+
+// - GitHub Profile: https://github.com/${input.githubUser}
+// - Email Address: ${input.email}
+// `
+// };
+// .then((input) => {
+// // console.log(input)
+// // const markdownGen = generateMarkdown(input); 
+// fs.writeFile("READMeGen.md", input, (err) => {
+//     err ? console.log(err) : console.log("READMe.md has been created!")
+// })
