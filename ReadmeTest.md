@@ -1,7 +1,7 @@
-# ReadME GENERATOR TEST
+# Readme Generator
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ## Description
-to make Readme files quickly iquirer
+To be able to create Readme files quickly and easily. I learned a lot of JS from doing this project
 
 ---
 
@@ -23,11 +23,11 @@ to make Readme files quickly iquirer
 
 ## Installation
 
-git clone 
+Clone the github repo to your local computer, then install required modules with <npm i>
 
 ## Usage
 
-test
+Execute the index.js file
 
 ## License
 
@@ -36,13 +36,13 @@ For more information, visit: https://opensource.org/licenses/MIT
 
 ## Contributions
 
-test
+Dylan
 
 ## Testing
 
-N/A
+n/a
 
 ## Questions and Contact
 
 - GitHub Profile: https://github.com/dvonwald
-- Email Address: dylan.vonwald@gmail.com
+- Email Address: test@test.com
